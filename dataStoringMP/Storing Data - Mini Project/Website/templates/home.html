@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block title %}Home Screen{% endblock %}
+
+{% block content %} 
+
+<h1>this is home screen</h1>
+
+
+
+
+
+
+<form method="POST">
+
+    <ul>
+
+        {% for x in namesToDisplay.allNames %}
+    
+            <li> 
+    
+                {{ x.data }} 
+                
+            </li>
+    
+        {% endfor %}
+        
+    </ul>
+
+    <div>
+        <textarea name="name" id="name" ></textarea>
+
+    </div>
+
+    <br />
+
+    <div align="center">
+        <button type="submit" >Add Name</button>
+    </div>
+</form>
+ 
+
+{% endblock %}
+
