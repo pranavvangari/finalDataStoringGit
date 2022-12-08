@@ -8,26 +8,18 @@
 <h1>this is home screen</h1>
 
 
+{% for names in namesToDisplay %}
+    <ul>
+        <li>{{ names.data }}</li>
+        
+    </ul>
+{% endfor %}
+
 
 
 
 
 <form method="POST">
-
-    <ul>
-
-        {% for x in namesToDisplay.allNames %}
-    
-            <li> 
-    
-                {{ x.data }} 
-                
-            </li>
-    
-        {% endfor %}
-        
-    </ul>
-
     <div>
         <textarea name="name" id="name" ></textarea>
 
