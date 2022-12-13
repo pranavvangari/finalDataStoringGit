@@ -4,6 +4,16 @@
 
     <h1>This is Input Screen</h1>
 
+    {% for names in namesToDisplay %}
+            <ul>
+                <li>{{ names.data }}</li>
+                
+            </ul>
+    {% endfor %}
+
+    
+
+
     <form method="POST">
 
         <div>
@@ -15,7 +25,42 @@
         <div align="center">
             <button type="submit" >Find Name</button>
         </div>
+
+
     </form>
+    {% for x in arr %}
+        <ul>
+            <li>{{ x }}</li>
+        </ul>
+
+
+    {% endfor %}
+
+    <br/>
+    Break
+    <br/>
+    {% for y in filteredArr %}
+        <ul>
+            <li>
+                {{ y }}
+            </li>
+        </ul>
+    {% endfor %}
+
+
+<!--
+    {% for y in namesToDisplay %}
+            {% if name[1] == y.data[1] %}
+            <ul>
+                <li>{{ y.data }}</li>
+                
+            </ul>
+            {% endif %}
+    {% endfor %}
+-->
+    
+
+    
 
     
 

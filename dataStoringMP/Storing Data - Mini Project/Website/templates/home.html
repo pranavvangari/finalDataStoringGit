@@ -9,11 +9,24 @@
 
 
 {% for names in namesToDisplay %}
+
     <ul>
         <li>{{ names.data }}</li>
         
     </ul>
+
 {% endfor %}
+
+<!-- 
+    {% for names in namesToDisplay %}
+    <ul>
+        <li>{{ names.data[1] }}</li>
+        
+    </ul>
+{% endfor %}
+
+-->
+
 
 
 
