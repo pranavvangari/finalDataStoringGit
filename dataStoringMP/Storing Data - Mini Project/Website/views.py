@@ -45,8 +45,4 @@ def input():
 
         
 
-
-
-
-
     return render_template("input.html", namesToDisplay=Name.query.all(), arr=specificArr, name=name, filteredArr=outputArr)
