@@ -28,7 +28,8 @@
 
 
     </form>
-    {% for x in arr %}
+    <div style="background-color: lightgray;">
+        {% for x in databaseArr %}
         <ul>
             <li>{{ x }}</li>
         </ul>
@@ -36,10 +37,14 @@
 
     {% endfor %}
 
+
+    </div>
+    
+
     <br/>
     Break
     <br/>
-    {% for y in filteredArr %}
+    {% for y in outputArr %}
         <ul>
             <li>
                 {{ y }}
@@ -47,17 +52,7 @@
         </ul>
     {% endfor %}
 
-
-<!--
-    {% for y in namesToDisplay %}
-            {% if name[1] == y.data[1] %}
-            <ul>
-                <li>{{ y.data }}</li>
-                
-            </ul>
-            {% endif %}
-    {% endfor %}
--->
+    <br/>
     
 
     
