@@ -5,7 +5,10 @@ from . import db
 views = Blueprint('views', __name__)
 
 tempName = None
-specificArr = ["red", "blue"]
+
+
+
+
 
 
 @views.route('/', methods=['GET', 'POST'])
@@ -17,36 +20,56 @@ def home():
         
         if len(name) > 1:
             new_name = Name(data=name)
-            specificArr.append(name)
             db.session.add(new_name)
             db.session.commit()
-            print(specificArr)
+            
             flash('Saved', category='success')
 
         else:
 
             flash('Not saved', category='error')
+
+        
+        
     
 
     return render_template("home.html", namesToDisplay=Name.query.all()) 
 
 
-outputArr = ["ben", "pranav"]
+
+
+
 @views.route('/input', methods=['GET', 'POST'])
 def input():
 
-    name = request.form.get('name')
+    
+    outputArr = ["ben", "pranav"]
+    databaseArr = ["red", "blue"]
+    
 
     if request.method == 'POST':
-        
-        for x in specificArr:
-            if x == name:
-                outputArr.append(x)
+        name = request.form.get("findName")
 
         
+        tempArr = Name.query.all()
+        outputArr = ["ben", "pranav", "yehan"]
+        for x in tempArr:
+            databaseArr.append(x.data)
+
+        
+        for y in databaseArr:
+            if name == y:
+                outputArr.append(y)
+        
+            
+
+
+        
+
+        
 
 
 
 
 
-    return render_template("input.html", namesToDisplay=Name.query.all(), arr=specificArr, name=name, filteredArr=outputArr)
+    return render_template("input.html", namesToDisplay=Name.query.all(), databaseArr=databaseArr, name=name, outputArr=outputArr)
