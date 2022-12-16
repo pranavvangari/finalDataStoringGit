@@ -64,12 +64,5 @@ def input():
             
 
 
-        
-
-        
-
-
-
-
 
     return render_template("input.html", namesToDisplay=Name.query.all(), databaseArr=databaseArr, name=name, outputArr=outputArr)
